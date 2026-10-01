@@ -1,0 +1,40 @@
+name: Funcionalidade
+description: Proponha uma funcionalidade com escopo e critérios de aceite claros.
+title: "feat: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto
+      description: Explique o problema ou a necessidade que originou o trabalho.
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo
+      description: Descreva o resultado esperado.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Escopo
+      description: Liste o que está incluído e o que está fora do escopo.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite
+      description: Liste comportamentos verificáveis e testes esperados.
+      placeholder: "- [ ] Critério verificável"
+    validations:
+      required: true
+  - type: textarea
+    id: technical-notes
+    attributes:
+      label: Observações técnicas
+      description: Registre dependências, riscos, decisões e restrições.
