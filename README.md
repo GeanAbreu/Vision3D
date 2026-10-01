@@ -1,5 +1,11 @@
 # 📦 Catálogo Online de Objetos 3D
 
+<p align="center">
+  <a href="https://github.com/GeanAbreu/Vision3D">
+    <img src="docs/images/vision3d-logo.jpg" alt="Logo Vision 3D" width="720">
+  </a>
+</p>
+
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
@@ -7,6 +13,8 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 Aplicação web responsiva para exibição e gerenciamento de catálogo online de objetos 3D, com consulta de disponibilidade, simulação de frete e geração de solicitações de compra via WhatsApp.
+
+🔗 **Repositório:** [github.com/GeanAbreu/Vision3D](https://github.com/GeanAbreu/Vision3D)
 
 ## 📑 Sumário
 
@@ -112,8 +120,8 @@ As principais entidades estruturadas no PostgreSQL via Supabase incluem:
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/catalogo-objetos-3d.git
-cd catalogo-objetos-3d
+git clone https://github.com/GeanAbreu/Vision3D.git
+cd Vision3D
 ```
 
 ### 2. Instalar as dependências
@@ -169,7 +177,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ## 📂 Estrutura de Pastas
 
 ```text
-catalogo-objetos-3d/
+Vision3D/
 ├── src/
 │   ├── app/                  # Rotas públicas e administrativas (App Router)
 │   │   ├── (public)/         # Páginas do catálogo, produto e lista de interesse
