@@ -54,16 +54,16 @@ Ao finalizar a seleção dos produtos, o sistema gera uma mensagem estruturada e
 
 ## 🛠️ Stack Tecnológica
 
-| Camada | Tecnologia | Descrição / Função |
-| --- | --- | --- |
-| Framework web | Next.js (App Router) | Renderização híbrida (SSR/SSG), SEO e rotas de servidor |
-| Linguagem | TypeScript | Tipagem estática end-to-end e maior segurança de código |
-| Estilização | Tailwind CSS | Interface responsiva, moderna e acessível |
+| Camada         | Tecnologia            | Descrição / Função                                            |
+| -------------- | --------------------- | ------------------------------------------------------------- |
+| Framework web  | Next.js (App Router)  | Renderização híbrida (SSR/SSG), SEO e rotas de servidor       |
+| Linguagem      | TypeScript            | Tipagem estática end-to-end e maior segurança de código       |
+| Estilização    | Tailwind CSS          | Interface responsiva, moderna e acessível                     |
 | Banco de dados | Supabase (PostgreSQL) | Persistência de dados relacionais e políticas de acesso (RLS) |
-| Autenticação | Supabase Auth | Gerenciamento seguro de sessões de administradores |
-| Armazenamento | Supabase Storage | Hospedagem e otimização de imagens de produtos |
-| API de frete | Melhor Envio | Integração de cotação de frete com múltiplas transportadoras |
-| Hospedagem | Vercel | Deploy automatizado, CDN global e ambientes de preview |
+| Autenticação   | Supabase Auth         | Gerenciamento seguro de sessões de administradores            |
+| Armazenamento  | Supabase Storage      | Hospedagem e otimização de imagens de produtos                |
+| API de frete   | Melhor Envio          | Integração de cotação de frete com múltiplas transportadoras  |
+| Hospedagem     | Vercel                | Deploy automatizado, CDN global e ambientes de preview        |
 
 ## 🏗️ Arquitetura de Software
 
@@ -112,8 +112,8 @@ As principais entidades estruturadas no PostgreSQL via Supabase incluem:
 
 ### Pré-requisitos
 
-- Node.js v18.x ou superior;
-- npm, pnpm ou Yarn;
+- Node.js v24.x;
+- npm v11.x;
 - uma conta no Supabase;
 - uma conta Sandbox no Melhor Envio.
 
@@ -127,7 +127,7 @@ cd Vision3D
 ### 2. Instalar as dependências
 
 ```bash
-npm install
+npm ci
 ```
 
 ### 3. Configurar as variáveis de ambiente
@@ -138,15 +138,7 @@ Crie um arquivo `.env.local` na raiz do projeto, preenchendo as chaves necessár
 cp .env.example .env.local
 ```
 
-### 4. Executar as migrações do banco de dados
-
-Aplique o esquema SQL do banco de dados no seu projeto do Supabase:
-
-```bash
-npx supabase db push
-```
-
-### 5. Iniciar o servidor de desenvolvimento
+### 4. Iniciar o servidor de desenvolvimento
 
 ```bash
 npm run dev
@@ -160,16 +152,16 @@ O arquivo `.env.local` deve conter as seguintes variáveis configuradas:
 
 ```dotenv
 # Supabase
-NEXT_PUBLIC_SUPABASE_URL=https://seu-projeto.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=sua-chave-anonima-supabase
-SUPABASE_SERVICE_ROLE_KEY=sua-chave-service-role-supabase
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
 
 # API Melhor Envio
-MELHOR_ENVIO_TOKEN=seu-token-bearer-melhor-envio
-MELHOR_ENVIO_URL=https://sandbox.melhorenvio.com.br/api/v2
+MELHOR_ENVIO_TOKEN=
 
 # Configurações do App
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+WHATSAPP_PHONE_NUMBER=
 ```
 
 > Nunca inclua valores reais de credenciais ou tokens no controle de versão. Mantenha somente exemplos sem dados sensíveis em `.env.example`.
@@ -178,23 +170,30 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 ```text
 Vision3D/
+├── .github/
+│   ├── workflows/ci.yml     # Validações automatizadas dos Pull Requests
+│   └── pull_request_template.md
 ├── src/
-│   ├── app/                  # Rotas públicas e administrativas (App Router)
-│   │   ├── (public)/         # Páginas do catálogo, produto e lista de interesse
-│   │   ├── admin/            # Dashboard, gestão de produtos e estoque
-│   │   └── api/              # Endpoints para cotação de frete e webhooks
-│   ├── components/           # Componentes UI reutilizáveis (cards, formulários)
-│   ├── lib/                  # Clientes e utilitários (Supabase, Melhor Envio)
-│   ├── types/                # Interfaces e tipos TypeScript
-│   └── actions/              # Server Actions do Next.js
-├── supabase/
-│   ├── migrations/           # Scripts SQL de schema e políticas RLS
-│   └── seed.sql              # Dados iniciais para ambiente de teste
-├── public/                   # Arquivos estáticos (favicons, logos)
+│   ├── app/                 # Rotas e layout usando App Router
+│   └── lib/                 # Regras e utilitários compartilhados
+├── docs/                    # Requisitos e decisões do projeto
+├── public/                  # Arquivos estáticos
 ├── .env.example              # Modelo de variáveis de ambiente
-├── tailwind.config.ts        # Configurações do Tailwind CSS
+├── package.json              # Scripts e dependências
 └── README.md                 # Documentação do projeto
 ```
+
+## ✅ Scripts de Qualidade
+
+```bash
+npm run format:check
+npm run lint
+npm run typecheck
+npm test
+npm run build
+```
+
+Os mesmos comandos são executados automaticamente pelo GitHub Actions em cada Pull Request.
 
 ## 📜 Licença
 
