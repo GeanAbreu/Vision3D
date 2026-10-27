@@ -1,0 +1,23 @@
+.vision-logo{display:block;background:transparent}
+.vision-logo img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 22px rgba(0,0,0,.36))}
+.vision-logo--compact{width:116px;height:48px}
+.printer-scene{position:relative;width:min(390px,100%);aspect-ratio:1.1;margin:auto;display:grid;place-items:center;isolation:isolate}
+.printer-glow{position:absolute;inset:14%;border-radius:50%;background:rgba(235,165,34,.13);filter:blur(55px);z-index:-1}
+.printer-frame{position:relative;width:72%;height:75%;border:7px solid #24252a;border-bottom-width:12px;border-radius:18px 18px 24px 24px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(0,0,0,.12));box-shadow:inset 0 0 0 2px #0c0d0f,0 30px 70px rgba(0,0,0,.55)}
+.printer-frame:before,.printer-frame:after{content:'';position:absolute;top:-7px;width:20px;height:100%;background:linear-gradient(90deg,#111216,#303138,#111216);border-radius:8px;z-index:2}.printer-frame:before{left:-7px}.printer-frame:after{right:-7px}
+.printer-rail{position:absolute;top:22%;left:3%;right:3%;height:12px;border-block:2px solid #484a51;background:#17181b;box-shadow:0 5px 14px #000}
+.printer-head{position:absolute;left:16%;top:-11px;width:58px;height:42px;border:1px solid #555861;border-radius:7px 7px 11px 11px;background:linear-gradient(135deg,#3a3c43,#17181c);box-shadow:0 9px 14px rgba(0,0,0,.55);animation:print-head 4.2s ease-in-out infinite}
+.printer-head:before{content:'';position:absolute;left:50%;bottom:-17px;width:9px;height:18px;transform:translateX(-50%);clip-path:polygon(20% 0,80% 0,100% 100%,0 100%);background:linear-gradient(#d6a43d,#5d4318)}
+.printer-head i{position:absolute;right:8px;top:8px;width:5px;height:5px;border-radius:50%;background:#f1b94e;box-shadow:0 0 10px #f1b94e}
+.printer-filament{position:absolute;left:50%;top:calc(22% + 48px);width:2px;height:29%;background:linear-gradient(#ffc85c,rgba(255,177,38,.1));box-shadow:0 0 7px #ffb52d;transform-origin:top;animation:filament 1.05s ease-in-out infinite}
+.printed-object{position:absolute;left:50%;bottom:23%;width:39%;height:35%;transform:translateX(-50%);filter:drop-shadow(0 8px 12px rgba(244,178,51,.32))}
+.printed-object svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;fill:#edb33d;stroke:#ffd875;stroke-width:1.4;opacity:0;transform:scale(.74) translateY(12px);transform-origin:bottom center;animation:shape-cycle 15s ease-in-out infinite}
+.printed-object svg:nth-child(2){animation-delay:3s}.printed-object svg:nth-child(3){animation-delay:6s}.printed-object svg:nth-child(4){animation-delay:9s}.printed-object svg:nth-child(5){animation-delay:12s}
+.printer-bed{position:absolute;left:12%;right:12%;bottom:18%;height:14px;border:1px solid #666870;background:linear-gradient(#3f4147,#17181c);transform:perspective(150px) rotateX(20deg);box-shadow:0 9px 16px #000}.printer-bed i{position:absolute;left:5%;right:5%;top:3px;height:2px;background:#d89c2e;opacity:.55}
+.printer-base{position:absolute;left:-4%;right:-4%;bottom:-10px;height:16%;display:flex;align-items:center;justify-content:center;border:1px solid #3c3e44;border-radius:7px 7px 16px 16px;background:linear-gradient(#292a2f,#111216);z-index:3}.printer-base span{color:#bb8529;font:700 7px/1 Manrope,sans-serif;letter-spacing:1.8px}.printer-base i{position:absolute;right:13%;width:7px;height:7px;border-radius:50%;background:#55d887;box-shadow:0 0 8px #55d887}
+.printer-status{position:absolute;bottom:0;display:flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid rgba(255,255,255,.08);border-radius:999px;color:#999ba2;background:rgba(10,11,13,.82);font-size:9px;text-transform:uppercase;letter-spacing:1px;backdrop-filter:blur(8px)}.printer-status i{width:6px;height:6px;border-radius:50%;background:#f1b84b;box-shadow:0 0 10px #f1b84b;animation:status-pulse 1.4s ease-in-out infinite}
+@keyframes print-head{0%,100%{left:12%}50%{left:68%}}
+@keyframes filament{50%{opacity:.35;transform:scaleY(.7)}}
+@keyframes shape-cycle{0%{opacity:0;transform:scale(.74,.08) translateY(12px)}5%,15%{opacity:1;transform:scale(.94) translateY(0)}19%,100%{opacity:0;transform:scale(.94) translateY(0)}}
+@keyframes status-pulse{50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.printer-head,.printer-filament,.printer-status i{animation:none}.printed-object svg{animation:none;opacity:0}.printed-object svg:first-child{opacity:1;transform:scale(.94)}}

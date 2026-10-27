@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root { color: #f7f5ef; background: #08090b; font-family: 'DM Sans', sans-serif; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.page-shell { position: relative; min-height: 100vh; overflow: hidden; background: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px), #08090b; background-size: 40px 40px; }
+.ambient { position: absolute; border-radius: 999px; filter: blur(90px); pointer-events: none; }
+.ambient--one { width: 320px; height: 320px; background: rgba(244,170,40,.13); top: -130px; right: -120px; }
+.ambient--two { width: 260px; height: 260px; background: rgba(65,105,225,.08); top: 47%; left: -180px; }
+.landing { position: relative; width: min(100%, 500px); margin: 0 auto; padding: 0 20px; }
+.topbar { min-height: 118px; display: flex; align-items: center; justify-content: center; padding-top: 20px; }
+.landing-brand { display:grid; justify-items:center; gap:10px; text-align:center; }
+.landing-brand p { max-width:390px; margin:0; color:#a2a4aa; font-size:14px; line-height:1.55; }
+.brand { color: inherit; text-decoration: none; display: flex; align-items: center; gap: 11px; }
+.brand .vision-logo--compact { width: min(250px,70vw); height: auto; aspect-ratio: 1.493; transition: transform .25s ease; }
+.brand:hover .vision-logo--compact { transform: translateY(-2px) scale(1.02); }
+.brand-mark { width: 42px; height: 42px; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; gap: 1px; border: 1px solid rgba(246,183,61,.38); border-radius: 13px; background: linear-gradient(145deg,#28241c,#0e0f12 66%); box-shadow: inset 0 1px rgba(255,255,255,.09),0 9px 28px rgba(0,0,0,.3); color: #fff; font-family: Manrope,sans-serif; font-size: 12px; font-weight: 800; letter-spacing: -.5px; }
+.brand-mark span:last-child, .brand strong span { color: #f2b94b; }
+.brand strong { display: block; font: 800 20px/1 Manrope,sans-serif; letter-spacing: -1px; }
+.brand small { display: block; margin-top: 5px; color: #777a82; text-transform: uppercase; letter-spacing: 1.45px; font-size: 7px; font-weight: 700; }
+.status { display: flex; align-items: center; gap: 7px; padding: 7px 9px; border: 1px solid rgba(93,195,134,.18); border-radius: 999px; color: #9ba49e; background: rgba(24,39,30,.36); font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+.status i { width: 6px; height: 6px; border-radius: 50%; background: #55d887; box-shadow: 0 0 0 4px rgba(85,216,135,.09),0 0 12px #55d887; }
+.hero { padding: 38px 0 35px; text-align: center; }
+.hero > .vision-logo { width: min(100%,430px); aspect-ratio: 1.493; margin: 0 auto 31px; border-radius: 28px; transform: perspective(900px) rotateX(2deg); box-shadow: 0 30px 80px rgba(0,0,0,.55),0 0 55px rgba(236,166,34,.09); }
+.eyebrow { width: fit-content; margin: 0 auto 26px; display: flex; align-items: center; gap: 7px; color: #e8b650; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.7px; }
+.hero-art { position: relative; width: 160px; height: 160px; margin: 0 auto 27px; display: grid; place-items: center; perspective: 600px; }
+.orbit { position: absolute; inset: 0; border: 1px solid rgba(235,175,61,.22); border-radius: 50%; transform: rotateX(62deg) rotateZ(-18deg); }
+.orbit::after { content: ''; position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #f0b84b; top: 20px; right: 20px; box-shadow: 0 0 18px #f0b84b; }
+.orbit--inner { inset: 19px; border-color: rgba(255,255,255,.1); transform: rotateX(67deg) rotateZ(40deg); }
+.orbit--inner::after { width: 5px; height: 5px; top: auto; right: auto; bottom: 9px; left: 30px; background: #8ca7ff; box-shadow: 0 0 15px #8ca7ff; }
+.object-3d { width: 88px; height: 88px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.11); border-radius: 27px; color: #f2bc51; background: linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.025)); box-shadow: inset 0 1px rgba(255,255,255,.15),0 24px 60px rgba(0,0,0,.55),0 0 45px rgba(232,169,52,.11); transform: rotate(-8deg); }
+.hero h1 { max-width: 430px; margin: 0 auto; font: 800 clamp(40px,11vw,58px)/.98 Manrope,sans-serif; letter-spacing: -3.2px; }
+.hero h1 em { display: block; color: #efb84f; font-style: normal; }
+.hero > p { max-width: 385px; margin: 19px auto 0; color: #98999f; font-size: 15px; line-height: 1.65; }
+.quick-trust { margin-top: 22px; display: flex; justify-content: center; gap: 18px; color: #cacacd; font-size: 11px; font-weight: 600; }
+.quick-trust span { display: flex; align-items: center; gap: 6px; }.quick-trust svg { color: #e7ae42; }
+.actions { padding: 28px 0 64px; }
+.landing--minimal { min-height:100vh; display:flex; flex-direction:column; justify-content:center; }
+.landing--minimal .topbar { height:auto; }
+.landing--minimal .actions { width:100%; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 15px; }
+.section-heading span { font: 700 16px Manrope,sans-serif; }.section-heading p { margin: 0; color: #696b73; font-size: 10px; }
+.link-list { display: grid; gap: 10px; }
+.link-card,.pix-card { min-height: 78px; width: 100%; display: flex; align-items: center; gap: 13px; padding: 13px; border: 1px solid rgba(255,255,255,.08); border-radius: 19px; color: #f8f8f8; background: rgba(20,21,25,.78); box-shadow: inset 0 1px rgba(255,255,255,.045); text-align: left; text-decoration: none; transition: transform .2s ease,border-color .2s ease,background .2s ease; cursor: pointer; }
+.link-card:active,.pix-card:active { transform: scale(.98); }
+.link-icon { width: 49px; height: 49px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 15px; background: rgba(255,255,255,.06); }
+.link-copy { min-width: 0; flex: 1; }.link-copy strong { display: block; margin-bottom: 4px; font: 700 14px Manrope,sans-serif; }.link-copy small { display: block; overflow: hidden; color: #777a81; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.link-arrow { color: #666970; margin-right: 4px; }.link-card--whatsapp .link-icon { color: #65df91; background: rgba(47,181,96,.11); }.link-card--instagram .link-icon { color: #ef79a5; background: rgba(218,76,137,.11); }.link-card--website .link-icon { color: #91aaff; background: rgba(82,110,220,.11); }
+.pix-card { font: inherit; }.pix-card .link-icon { color: #efbd5a; background: rgba(224,163,44,.11); }.copy-action { width: 38px; height: 38px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid rgba(236,181,74,.2); border-radius: 12px; color: #edb84e; background: rgba(236,181,74,.07); }
+.pix-card.is-copied { border-color: rgba(76,215,133,.3); }.pix-card.is-copied .link-icon,.pix-card.is-copied .copy-action { color: #5bdd91; background: rgba(76,215,133,.1); border-color: rgba(76,215,133,.2); }
+footer { padding: 35px 0 42px; border-top: 1px solid rgba(255,255,255,.06); text-align: center; }footer .vision-logo { margin: 0 auto 16px; opacity: .78; }footer p { margin: 0 0 7px; color: #8d8f95; font-size: 11px; }footer small { color: #4f5158; font-size: 9px; }
+.printer-feature { margin-bottom: 55px; padding: 32px 24px 26px; overflow: hidden; border: 1px solid rgba(239,184,79,.13); border-radius: 28px; background: radial-gradient(circle at 75% 48%,rgba(239,174,49,.09),transparent 38%),rgba(17,18,21,.78); }
+.printer-feature > div:first-child { position: relative; z-index: 2; text-align: center; }
+.printer-feature > div:first-child > span { color:#e8b44e;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.7px }
+.printer-feature h2 { margin: 9px 0 10px; font:800 25px/1.1 Manrope,sans-serif;letter-spacing:-1.3px }
+.printer-feature p { max-width:400px;margin:0 auto;color:#85878e;font-size:12px;line-height:1.65 }
+.printer-feature .printer-scene { margin-top: 4px; }
+@media (hover:hover) { .link-card:hover,.pix-card:hover { transform: translateY(-2px); border-color: rgba(239,184,79,.22); background: rgba(27,28,32,.94); } }
+@media (min-width:760px) { .landing { width: min(100%,920px); padding-inline: 36px; }.hero { padding-top: 54px; }.actions { max-width: 600px; margin-inline: auto; }.printer-feature{display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:25px 40px}.printer-feature>div:first-child{text-align:left}.printer-feature p{margin:0}.printer-feature .printer-scene{max-width:330px} }
+@media (max-width:520px) { .landing--minimal { justify-content:flex-start; padding-top:54px; }.brand .vision-logo--compact { width:min(228px,64vw); }.landing-brand p { max-width:310px; font-size:13px; }.landing--minimal .actions { padding-top:24px; } }
+@media (prefers-reduced-motion:no-preference) { .object-3d { animation: float 5s ease-in-out infinite; }.orbit--outer { animation: spin 18s linear infinite; }@keyframes float { 50% { transform: translateY(-8px) rotate(-3deg); } }@keyframes spin { to { transform: rotateX(62deg) rotateZ(342deg); } } }

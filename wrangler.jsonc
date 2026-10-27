@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vision3d-oficial",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "vision3d-catalog",
+      "database_id": "cefb1595-bd5b-4884-a067-1e8edd8b0a2b",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "PRODUCT_IMAGES",
+      "bucket_name": "vision3d-product-images"
+    }
+  ],
+  "vars": {
+    "ORIGIN_CEP": "06160126",
+    "ME_BASE_URL": "https://melhorenvio.com.br"
+  }
+}
